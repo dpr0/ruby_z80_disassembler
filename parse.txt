@@ -1,14 +1,3 @@
-    PUSH IX       ; 
-    PUSH BC       ; 
-    LD A,(#1234)  ; 
-    LD B,A        ; 
-    POP BC        ; 
-    POP IX        ; 
-    LD (IX),D     ; 
-    call #1234    ; 
-    INC IX        ; 
-    INC IX        ; 
-    INC IX        ; 
     BIT 0,A       ; 
     CALL Z,#620A  ; 
     LD (#3F4F),A  ; 

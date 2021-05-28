@@ -1,7 +1,10 @@
-# Z80 ruby disassembler
+# ruby Z80 disassembler
 # dvitvitskiy.pro@gmail.com
 # https://github.com/dpr0
-# ruby parse.rb filename
+# ruby disasm.rb filename
+#
+# prepare: sjasmplus parse.asm    - компилим исходник parse.asm в parse.C
+# example: ruby disasm.rb parse.C - дизассемблируем parse.C в parse.C.txt и сравниваем с parse.txt
 require 'byebug'
 require 'minitest/autorun'
 
@@ -189,7 +192,9 @@ end
 class TestMe < Minitest::Test
   def test_Result
     Disassembler.new('parse.C').start
+    Disassembler.new('error.C').start
     assert_equal File.read('parse.txt'), File.read('parse.C.txt')
+    assert_equal File.read('error.txt'), File.read('error.C.txt')
   end
 end
 

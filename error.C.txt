@@ -1,0 +1,11 @@
+    PUSH BC       ; 
+    LD A,(#1234)  ; 
+    LD B,A        ; 
+    POP BC        ; 
+    POP HL        ; 
+    LD A,(72)     ; 
+    NOP           ; 
+    CALL #1234    ; 
+    INC HL        ; 
+    CALL #23DD    ; 
+    INC HL        ; 

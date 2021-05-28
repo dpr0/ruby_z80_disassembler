@@ -1,21 +1,7 @@
     device zxspectrum48
     org #6100 ; адрес на который компилировать    
 begin_file:
-    DEC IX
-    INC IXL
-    push ix
-    push bc ;
-    ld a,(#1234)
-    ld b,a
-    pop bc
-    pop ix
-    ld (ix),d
-    call #1234  
-    inc ix
-    inc ix
-    inc ix
-
-    BIT 0,A       ; 
+    BIT 0,A       ;
     CALL Z,#620A  ;  
     LD (#3F4F),A  ; 
     LD (#5F6F),HL ; 
