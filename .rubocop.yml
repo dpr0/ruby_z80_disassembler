@@ -1,0 +1,105 @@
+Layout/CaseIndentation:
+  Exclude:
+    - 'disasm.rb'
+Layout/EndAlignment:
+  Exclude:
+    - 'disasm.rb'
+Layout/ExtraSpacing:
+  Exclude:
+    - 'disasm.rb'
+Layout/IndentationConsistency:
+  Exclude:
+    - 'disasm.rb'
+Layout/IndentationWidth:
+  Exclude:
+    - 'disasm.rb'
+Layout/SpaceAfterComma:
+  Exclude:
+    - 'disasm.rb'
+Layout/SpaceAroundOperators:
+  Exclude:
+    - 'disasm.rb'
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: no_space
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'disasm.rb'
+Layout/SpaceInsideStringInterpolation:
+  Exclude:
+    - 'disasm.rb'
+Lint/ElseLayout:
+  Exclude:
+    - 'disasm.rb'
+Lint/RedundantStringCoercion:
+  Exclude:
+    - 'disasm.rb'
+Lint/UnusedBlockArgument:
+  Exclude:
+    - 'disasm.rb'
+Metrics/AbcSize:
+  Max: 80
+Metrics/BlockLength:
+  Max: 27
+Metrics/BlockNesting:
+  Max: 4
+Metrics/ClassLength:
+  Max: 157
+Metrics/CyclomaticComplexity:
+  Max: 47
+Metrics/MethodLength:
+  Max: 60
+Metrics/PerceivedComplexity:
+  Max: 25
+Naming/MethodName:
+  EnforcedStyle: snake_case
+Naming/MethodParameterName:
+  Exclude:
+    - 'disasm.rb'
+Style/AsciiComments:
+  Exclude:
+    - 'disasm.rb'
+Style/CommentedKeyword:
+  Exclude:
+    - 'disasm.rb'
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'disasm.rb'
+Style/FormatString:
+  Exclude:
+    - 'disasm.rb'
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'disasm.rb'
+Style/MutableConstant:
+  Exclude:
+    - 'disasm.rb'
+Style/ParallelAssignment:
+  Exclude:
+    - 'disasm.rb'
+Style/RedundantConditional:
+  Exclude:
+    - 'disasm.rb'
+Style/RedundantInterpolation:
+  Exclude:
+    - 'disasm.rb'
+Style/RedundantParentheses:
+  Exclude:
+    - 'disasm.rb'
+Style/SafeNavigation:
+  Exclude:
+    - 'disasm.rb'
+Style/Semicolon:
+  Exclude:
+    - 'disasm.rb'
+Style/StringConcatenation:
+  Exclude:
+    - 'disasm.rb'
+Style/StringLiterals:
+  Exclude:
+    - 'disasm.rb'
+Style/WordArray:
+  EnforcedStyle: brackets
+Layout/LineLength:
+  Max: 133
