@@ -1,2 +1,3 @@
-    DEC IX        ;
+    PUSH IX       ;
+    LD A,(#1234)  ;
     RET           ;

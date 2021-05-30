@@ -31,7 +31,6 @@ class Disassembler
     File.open(@file_name).each_byte do |byte|
       bin = byte.to_s(2).rjust(8, '0')
       load_vars(bin)
-      # @prefix = 'dd' if byte.to_s(16) == 'dd'
       str = case @prefix
         when 'cb' then cb_prefix
         when 'ed' then ed_prefix
@@ -150,8 +149,15 @@ class Disassembler
     @temp = command
     if @temp && @temp.include?('(')
       @prefix = 'xx'; nil
-    elsif @prev == 'dd' && @temp.include?('HL')
-      temp = @temp; @temp = nil; displacement(byte, temp)
+    elsif ['dd', 'fd'].include?(@prev) && @temp
+      temp = @temp; @temp = nil; @prefix = nil; xx = @xx; @xx = nil
+      if temp.include?('HL')
+        temp.sub('HL', xx)
+      elsif temp.include?(' L')
+        temp.sub(' L', " #{xx}L")
+      elsif temp.include?(' H')
+        temp.sub(' H', " #{xx}H")
+      end
     else @prefix = 2; @temp
     end
   end
@@ -184,10 +190,10 @@ end
 
 class TestMe < Minitest::Test
   def test_Result
-    # Disassembler.new('parse.C').start
-    # assert_equal File.read('parse.txt'), File.read('parse.C.txt')
-    Disassembler.new('error.C').start
-    assert_equal File.read('error.txt'), File.read('error.C.txt')
+    Disassembler.new('parse.C').start
+    assert_equal File.read('parse.txt'), File.read('parse.C.txt')
+    # Disassembler.new('error.C').start
+    # assert_equal File.read('error.txt'), File.read('error.C.txt')
   end
 end
 

@@ -1,8 +1,38 @@
     device zxspectrum48
     org #6100 ; адрес на который компилировать    
 begin_file:
-    push bc ;
-    ld a,(#1234)
+; pixel: DE - address (используется еще и C)
+      ld a, d
+      and %11111000
+      rrca
+      scf
+      rra
+      rrca
+      ld c, a ; 6*4+7=31
+      xor e
+      and %00000111
+      xor e ; 15
+      rrca
+      rrca
+      rrca
+      ld l, a ; 4*4=16
+      ld a, c
+      xor d
+      and %11111000
+      xor d
+      ld h, a
+;----------------------------
+    ld (ix),d
+    ld hl,(ix)       ; DD 6E 00 DD 66 01
+    push ix
+    ld a,(#1234) ; 3a 34 12
+    pop ix
+    dec ix
+    inc ixl
+    push bc
+    inc ix
+    inc ix
+    inc ix
     ld b,a
     pop bc
     call #1234
